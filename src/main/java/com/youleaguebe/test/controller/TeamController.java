@@ -3,6 +3,7 @@ package com.youleaguebe.test.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,7 @@ import com.youleaguebe.test.models.TeamInfo;
 import com.youleaguebe.test.service.TeamService;
 
 @RequestMapping("/teams")
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 public class TeamController {
 
