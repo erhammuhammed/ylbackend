@@ -5,10 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "leagueTable")
 public class LeagueTable {
 
     @Id
@@ -109,6 +107,12 @@ public class LeagueTable {
 
     public void setGa(int ga) {
         this.ga = ga;
+    }
+
+    @Override
+    public String toString() {
+        return "LeagueTable [id=" + id + ", teamId=" + teamId + ", games=" + games + ", wins=" + wins + ", draws="
+                + draws + ", loss=" + loss + ", points=" + points + ", gf=" + gf + ", ga=" + ga + "]";
     }
 
     
