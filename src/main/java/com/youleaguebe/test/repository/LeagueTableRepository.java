@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import com.youleaguebe.test.models.LeagueTable;
 import com.youleaguebe.test.models.DTO.TableDetailDTO;
 
-import jakarta.persistence.Tuple;
 import jakarta.transaction.Transactional;
 
 @Repository

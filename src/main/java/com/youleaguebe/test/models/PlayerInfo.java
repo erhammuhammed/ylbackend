@@ -18,6 +18,9 @@ public class PlayerInfo {
     @Column(name = "name")
     public String name;
 
+    @Column(name = "games")
+    public int games;
+
     @Column(name = "position")
     public String position;
 
@@ -25,7 +28,7 @@ public class PlayerInfo {
     public String phone;
 
     @Column(name = "goal")
-    public int goals;
+    public int goal;
 
     @Column(name = "assist")
     public int assist;
@@ -57,12 +60,12 @@ public class PlayerInfo {
         this.phone = phone;
     }
 
-    public int getGoals() {
-        return goals;
+    public int getGoal() {
+        return goal;
     }
 
-    public void setGoals(int goals) {
-        this.goals = goals;
+    public void setGoal(int goal) {
+        this.goal = goal;
     }
 
     public int getAssist() {
@@ -83,4 +86,19 @@ public class PlayerInfo {
 
     
 
+    public int getGames() {
+        return games;
+    }
+
+    public void setGames(int games) {
+        this.games = games;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
 }
