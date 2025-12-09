@@ -12,8 +12,30 @@ public class PlayerInfoDto {
 
     public int assist;
 
-    public PlayerInfoDto(String name, String team, int games, int goal, int assist) {
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String phone;
+
+    public String position;
+
+    public PlayerInfoDto(String name, String phone, String position, String team, int games, int goal, int assist) {
         this.name = name;
+        this.phone = phone;
+        this.position = position;
         this.team = team;
         this.games = games;
         this.goal = goal;
