@@ -17,7 +17,9 @@ public class MatchService {
     MatchDataRepository matchDataRepository;
 
     public MatchData saveNewMatch(MatchData data){
-        return matchDataRepository.save(data);
-    }
+            matchDataRepository.updateMatchData(data.getHomeTeamId(), data.getAwayTeamId(), data.getHomeGoals(), data.getAwayGoals(), data.getTime(), data.isFinished());
+            System.out.println("SP executed for match update");
+            return data;
+        }
 
 }

@@ -3,8 +3,8 @@ package com.youleaguebe.test.models.DTO;
 
 public class TableDetailDTO {
 
-    public TableDetailDTO(String teamName,Long pos, int games, int wins, int draws, int loss, int points, int gf,
-            int ga, Long gd) {
+    public TableDetailDTO(String teamName,int pos, int games, int wins, int draws, int loss, int points, int gf,
+            int ga, int gd) {
         this.teamName = teamName;
         this.games = games;
         this.wins = wins;
@@ -17,7 +17,7 @@ public class TableDetailDTO {
         this.gd = gd;
     }
 
-    public Long pos;
+    public int pos;
 
     public String teamName;
 
@@ -35,13 +35,13 @@ public class TableDetailDTO {
 
     public int ga;
 
-    public Long gd;
+    public int gd;
 
-    public Long getPos() {
+    public int getPos() {
         return pos;
     }
 
-    public void setPos(Long pos) {
+    public void setPos(int pos) {
         this.pos = pos;
     }
 
@@ -109,11 +109,11 @@ public class TableDetailDTO {
         this.ga = ga;
     }
 
-    public Long getGd() {
+    public int getGd() {
         return gd;
     }
 
-    public void setGd(Long gd) {
+    public void setGd(int gd) {
         this.gd = gd;
     }
 
