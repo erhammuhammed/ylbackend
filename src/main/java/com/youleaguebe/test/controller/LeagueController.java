@@ -15,10 +15,9 @@ import com.youleaguebe.test.models.LeagueTable;
 import com.youleaguebe.test.models.DTO.TableDetailDTO;
 import com.youleaguebe.test.service.LeagueService;
 
-import jakarta.persistence.Tuple;
 
 @RequestMapping("/leagues")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin("*")
 @RestController
 public class LeagueController {
 
