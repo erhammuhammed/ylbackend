@@ -1,9 +1,12 @@
 package com.youleaguebe.test.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.youleaguebe.test.models.MatchData;
+import com.youleaguebe.test.models.DTO.FixtureDto;
 import com.youleaguebe.test.repository.MatchDataRepository;
 import com.youleaguebe.test.repository.MatchStatRepository;
 
@@ -22,4 +25,7 @@ public class MatchService {
             return data;
         }
 
+    public List<FixtureDto> getAllFixturesSorted() {
+        return matchDataRepository.getFixturesSorted();
+    }
 }
