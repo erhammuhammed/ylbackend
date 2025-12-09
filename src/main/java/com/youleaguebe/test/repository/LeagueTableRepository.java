@@ -15,7 +15,7 @@ import jakarta.transaction.Transactional;
 @Transactional
 public interface LeagueTableRepository extends JpaRepository<LeagueTable, Integer> {
 
-    @Query(value = "SELECT t.name as teamName,CAST(ROW_NUMBER() OVER (ORDER BY  lb.points DESC,lb.gf-lb.ga DESC)  AS INT) AS pos,lb.games,lb.wins,lb.draws,lb.loss,lb.points,lb.ga,lb.gf,CAST((lb.gf-lb.ga) AS INT ) AS gd FROM league_table lb INNER JOIN teams t ON t.id = lb.team_id order by lb.points DESC", nativeQuery = true)
+    @Query(value = "SELECT t.name as teamName,CAST(ROW_NUMBER() OVER (ORDER BY  lb.points DESC,lb.gf DESC,lb.gf-lb.ga DESC)  AS INT) AS pos,lb.games,lb.wins,lb.draws,lb.loss,lb.points,lb.ga,lb.gf,CAST((lb.gf-lb.ga) AS INT ) AS gd FROM league_table lb INNER JOIN teams t ON t.id = lb.team_id order by lb.points DESC", nativeQuery = true)
     List<TableDetailDTO> fetchFullTableDetails();
 
 }

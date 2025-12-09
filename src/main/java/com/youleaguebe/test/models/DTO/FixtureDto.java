@@ -1,6 +1,5 @@
 package com.youleaguebe.test.models.DTO;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
 public class FixtureDto {

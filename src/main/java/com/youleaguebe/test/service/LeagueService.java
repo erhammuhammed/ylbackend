@@ -11,7 +11,6 @@ import com.youleaguebe.test.models.DTO.TableDetailDTO;
 import com.youleaguebe.test.repository.LeagueRepository;
 import com.youleaguebe.test.repository.LeagueTableRepository;
 
-import jakarta.persistence.Tuple;
 
 @Service
 public class LeagueService {
