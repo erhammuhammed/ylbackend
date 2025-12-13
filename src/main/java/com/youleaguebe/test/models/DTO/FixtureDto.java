@@ -4,13 +4,15 @@ import java.time.LocalDate;
 
 public class FixtureDto {
 
+    public int matchId;
     public int home_goals;
     public int away_goals;
     public LocalDate time;
     public boolean finished;
     public String homeTeam;
     public String awayTeam;
-    public FixtureDto(int home_goals, int away_goals, LocalDate time, boolean finished, String homeTeam, String awayTeam) {
+    public FixtureDto(int matchId,int home_goals, int away_goals, LocalDate time, boolean finished, String homeTeam, String awayTeam) {
+        this.matchId = matchId;
         this.home_goals = home_goals;
         this.away_goals = away_goals;
         this.time = time;
@@ -53,6 +55,12 @@ public class FixtureDto {
     }
     public void setAwayTeam(String awayTeam) {
         this.awayTeam = awayTeam;
+    }
+    public int getMatchId() {
+        return matchId;
+    }
+    public void setMatchId(int matchId) {
+        this.matchId = matchId;
     }
 
     

@@ -21,6 +21,9 @@ public class MatchStats {
     @Column(name = "teamId")
     public int teamId;
 
+    @Column(name = "matchId")
+    public int matchId;
+
     @Column(name = "goal")
     public boolean goal;
 
@@ -76,6 +79,14 @@ public class MatchStats {
 
     public void setCleansheet(boolean cleansheet) {
         this.cleansheet = cleansheet;
+    }
+
+    public int getMatchId() {
+        return matchId;
+    }
+
+    public void setMatchId(int matchId) {
+        this.matchId = matchId;
     }
 
 

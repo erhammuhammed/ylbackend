@@ -20,7 +20,10 @@ public interface MatchDataRepository extends JpaRepository<MatchData, Integer>{
     @Procedure
     public void updateMatchData(@Param("home") int home,@Param("away") int away,@Param("homeGoals") int homeGoals,@Param("awayGoals") int awayGoals,@Param("time") Date time, @Param("finished") Boolean finished);
 
-    @Query(value="SELECT m.home_goals, m.away_goals,m.time, m.finished,th.name as homeTeam, ta.name as awayTeam FROM matches m INNER JOIN teams th ON th.id = m.home INNER JOIN teams ta ON ta.id = m.away ORDER BY time desc", nativeQuery = true)
+    @Query(value="SELECT m.id as matchId,m.home_goals, m.away_goals,m.time, m.finished,th.name as homeTeam, ta.name as awayTeam FROM matches m INNER JOIN teams th ON th.id = m.home INNER JOIN teams ta ON ta.id = m.away ORDER BY time desc", nativeQuery = true)
     public List<FixtureDto> getFixturesSorted();
+
+    @Procedure
+    public void updateMatchStatsAndTeam(@Param("matchId") int matchId, @Param("playerId") int playerId, @Param("goal") boolean goal, @Param("assist") boolean assist, @Param("cleansheet") boolean cleansheet);
 
 }

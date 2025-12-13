@@ -15,7 +15,7 @@ import jakarta.transaction.Transactional;
 @Transactional
 public interface PlayerRepository extends JpaRepository<PlayerInfo, Integer>{
 
-    @Query(value = "select p.name,p.phone,p.position, t.name as team, p.games,p.goal, p.assist from players p INNER JOIN teams t on t.id = p.team_id", nativeQuery = true)
+    @Query(value = "select p.id as id,p.name,p.phone,p.position, t.name as team, p.games,p.goal, p.assist from players p INNER JOIN teams t on t.id = p.team_id", nativeQuery = true)
     List<PlayerInfoDto> fetchAllPlayers();
 
 }

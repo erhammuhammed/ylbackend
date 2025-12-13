@@ -2,6 +2,8 @@ package com.youleaguebe.test.models.DTO;
 
 public class PlayerInfoDto {
 
+    public int id;
+
     public String name;
 
     public String team;
@@ -32,7 +34,8 @@ public class PlayerInfoDto {
 
     public String position;
 
-    public PlayerInfoDto(String name, String phone, String position, String team, int games, int goal, int assist) {
+    public PlayerInfoDto(int id, String name, String phone, String position, String team, int games, int goal, int assist) {
+        this.id =id;
         this.name = name;
         this.phone = phone;
         this.position = position;
@@ -80,6 +83,14 @@ public class PlayerInfoDto {
 
     public void setAssist(int assist) {
         this.assist = assist;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     

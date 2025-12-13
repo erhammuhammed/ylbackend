@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.youleaguebe.test.models.MatchData;
+import com.youleaguebe.test.models.MatchStats;
 import com.youleaguebe.test.models.DTO.FixtureDto;
 import com.youleaguebe.test.service.MatchService;
 
@@ -30,6 +31,11 @@ public class MatchController {
     @GetMapping("/fixture")
     public List<FixtureDto> getAllFixturesSortedDesc() {
         return matchService.getAllFixturesSorted();
+    }
+
+    @PostMapping("/update")
+    public MatchStats updateMatch(@RequestBody MatchStats data) {
+        return matchService.updateMatchStats(data);
     }
 
 }

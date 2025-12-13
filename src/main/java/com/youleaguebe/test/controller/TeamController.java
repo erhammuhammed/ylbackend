@@ -14,7 +14,7 @@ import com.youleaguebe.test.models.TeamInfo;
 import com.youleaguebe.test.service.TeamService;
 
 @RequestMapping("/teams")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 @RestController
 public class TeamController {
 
