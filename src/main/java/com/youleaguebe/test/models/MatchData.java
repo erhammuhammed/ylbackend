@@ -3,14 +3,40 @@ package com.youleaguebe.test.models;
 import java.sql.Date;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.ColumnResult;
+import jakarta.persistence.ConstructorResult;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedStoredProcedureQueries;
+import jakarta.persistence.NamedStoredProcedureQuery;
+import jakarta.persistence.ParameterMode;
+import jakarta.persistence.SqlResultSetMapping;
+import jakarta.persistence.StoredProcedureParameter;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "matches")
+@NamedStoredProcedureQueries({
+    @NamedStoredProcedureQuery(
+        name = "MatchData.getMatchDetails",
+        procedureName = "getMatchDetails",
+        resultSetMappings = "MatchDetailsDto",
+        parameters = {@StoredProcedureParameter(mode = ParameterMode.IN, name = "matchId", type = Integer.class)}
+    )
+})
+@SqlResultSetMapping(
+    name = "MatchDetailsDto",
+    classes = @ConstructorResult(
+        targetClass = MatchDetailsDto.class,
+        columns = {
+            @ColumnResult(name = "name", type = String.class),
+            @ColumnResult(name = "hora", type = String.class),
+            @ColumnResult(name = "goalscored", type = String.class)
+        }
+    )
+)
 public class MatchData {
 
     @Id

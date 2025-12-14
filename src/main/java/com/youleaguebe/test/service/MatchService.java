@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.youleaguebe.test.models.MatchData;
+import com.youleaguebe.test.models.MatchDetailsDto;
 import com.youleaguebe.test.models.MatchStats;
 import com.youleaguebe.test.models.DTO.FixtureDto;
 import com.youleaguebe.test.repository.MatchDataRepository;
@@ -33,5 +35,10 @@ public class MatchService {
     public MatchStats updateMatchStats(MatchStats data) {
          matchDataRepository.updateMatchStatsAndTeam(data.getMatchId(), data.getPlayerId(), data.isGoal(), data.isAssist(),data.isCleansheet());
          return data;
+    }
+
+    @Transactional
+    public List<MatchDetailsDto> getMatchDetails(int matchId){
+        return matchDataRepository.getMatchDetails(matchId);
     }
 }

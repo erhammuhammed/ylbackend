@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.youleaguebe.test.models.MatchData;
+import com.youleaguebe.test.models.MatchDetailsDto;
 import com.youleaguebe.test.models.MatchStats;
 import com.youleaguebe.test.models.DTO.FixtureDto;
 import com.youleaguebe.test.service.MatchService;
@@ -36,6 +38,12 @@ public class MatchController {
     @PostMapping("/update")
     public MatchStats updateMatch(@RequestBody MatchStats data) {
         return matchService.updateMatchStats(data);
+    }
+
+    @GetMapping("/details")
+    public List<MatchDetailsDto> getOneMatchScorersDetails(@RequestParam(name = "matchId") int matchId) {
+        List<MatchDetailsDto> list = matchService.getMatchDetails(matchId);
+        return list;
     }
 
 }
